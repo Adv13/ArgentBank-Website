@@ -1,10 +1,17 @@
 import Header from "../../Components/header/header";
-import Auth from "../../components/authentification/authentification";
+import Presentation from "../../components/presentation/presentation";
+import Infos from "../../components/infos/infos";
 import Footer from "../../Components/footer/footer";
 
 function Home() {
     return(
-        <div></div>)
+        <div className="home">
+            <Header />
+            <Presentation />
+            <Infos />
+            <Footer />
+        </div>
+        )
 }
 
 export default Home;
