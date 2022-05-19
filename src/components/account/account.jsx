@@ -3,7 +3,10 @@
 
 function Account() {
     return(
-        <div></div>)
+        <div className="accountPage">
+            
+        </div>
+        )
 }
 
 export default Account;

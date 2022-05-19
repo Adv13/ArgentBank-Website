@@ -1,13 +1,11 @@
-import Header from "../../Components/header/header";
+import Header from "../../components/header/header";
 import Auth from "../../components/authentification/authentification";
-import Footer from "../../Components/footer/footer";
+import Footer from "../../components/footer/footer";
 
 function SignIn() {
     return(
         <div className="signIn">
-            <Header />
             <Auth />
-            <Footer />
         </div>
         )
 }

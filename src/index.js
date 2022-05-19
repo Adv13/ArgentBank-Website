@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./Components/header/header";
+import Header from "./components/header/header";
 import Error from "./components/error/error";
 import Home from "./pages/Home/Home";
 import SignIn from "./pages/SignIn/SignIn";
 import User from "./pages/User/User";
-import Footer from "./Components/footer/footer";
+import Footer from "./components/footer/footer";
 import "./main.scss";
 import reportWebVitals from './reportWebVitals';
 
