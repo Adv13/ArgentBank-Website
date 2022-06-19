@@ -1,5 +1,3 @@
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
 import { Link } from "react-router-dom";
 
 function SignIn() {
@@ -22,7 +20,7 @@ function SignIn() {
             <label htmlFor="remember-me">Remember me</label>
           </div>
           {/* <!-- PLACEHOLDER DUE TO STATIC SITE --> */}
-          <Link to="/user" className="sign-in-button">
+          <Link to="/profile" className="sign-in-button">
             Sign In
           </Link>
           {/* <!-- SHOULD BE THE BUTTON BELOW --> */}
@@ -32,16 +30,6 @@ function SignIn() {
       </section>
     </main>
   );
-}
-
-export default SignIn;
-
-function SignIn() {
-    return(
-        <div className="signIn">
-            <Auth />
-        </div>
-        )
 }
 
 export default SignIn;
