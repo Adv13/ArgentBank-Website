@@ -1,19 +1,25 @@
+@import "./styles/variables";
+@import "./styles/mixins";
+@import "./styles/base";
 @import "./components/header/header.scss";
-@import "./components/transactionContent/transactionContent.scss";
-@import "./pages/Transactions/transactions.scss";
 @import "./components/error/error.scss";
 @import "./components/footer/footer.scss";
+@import "./components/transactionContent/transactionContent.scss";
+@import "./pages/Transactions/transactions.scss";
+@import "./pages/Home/home";
+@import "./pages/SignIn/signIn";
+@import "./pages/User/user.scss";
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Avenir', 'Helvetica', 'Arial','Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// body {
+//   margin: 0;
+//   font-family: -apple-system, BlinkMacSystemFont, 'Avenir', 'Helvetica', 'Arial','Roboto', 'Oxygen',
+//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+//     sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }

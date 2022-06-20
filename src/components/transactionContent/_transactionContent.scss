@@ -1,45 +1,49 @@
-.titleSection {
-    border: 1px solid black;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  
-  .titleSection-content-wrapper {
-    width: 100%;
-    flex: 1;
-  }
-  
-  .titleSection-title {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  
-  .titleSection-amount {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .titleSection-amount-description {
-    margin: 0;
-  }
-  /* Fin du composant "TransTitle". */
-  
-  #transpage {
-    color: white;
-    padding: 150px 0 40px 0;
-  }
-  
-  .dataHead {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 25px;
-    font-weight: bold;
-    margin: 0 auto;
-  }
+.dataLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  width: 90%;
+  height: 50px;
+  color: black;
+  border: 1px black solid;
+  margin: 0 auto -10px auto;
+}
+
+#arrow {
+  width: 5%;
+}
+
+#arrow:hover,
+.pencil:hover {
+  cursor: pointer;
+}
+
+#date {
+  width: 25%;
+}
+
+#descr {
+  width: 30%;
+}
+
+#amount,
+#balance {
+  width: 20%;
+}
+
+.moreInfo {
+  display: block;
+  background: white;
+  color: black;
+  text-align: left;
+  padding: 5px 0 5px 10%;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 90%;
+  overflow: hidden;
+  color: black;
+  animation-name: collapse;
+  animation-duration: 600ms;
+}
