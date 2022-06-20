@@ -16,7 +16,7 @@ return(
     <Header />
     <Routes>
     <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/login" element={<SignIn />} />
         <Route path="/profile" element={<User />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/*" element={<Error />} />
