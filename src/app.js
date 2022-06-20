@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from './Components/Header/header'
-import Footer from './Components/Footer/footer'
-import Error from './Components/Error/error'
-import Home from './Pages/Home/home'
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
+import Error from './components/error/error'
+import Home from './pages/Home/Home'
 import SignIn from './pages/SignIn/SignIn'
 import User from './pages/User/User'
-
+import Transactions from "./pages/Transactions/Transactions";
 /**
 * This function contains the routing part of the website for the navigation.
 */
@@ -18,6 +18,7 @@ return(
     <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/profile" element={<User />} />
+        <Route path="/transactions" element={<Transactions />} />
         <Route path="/*" element={<Error />} />
     </Routes>
     <Footer />
