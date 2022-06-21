@@ -7,21 +7,34 @@ import { getProfile } from "../../API/api";
 
 function Header() {
 
-    const [isLogged, setIsLogged] = useState(false);
-    const userName = "Tony";
+    const token = useSelector((state) => state.token);
+    const userDatas = useSelector((state) => state.profile);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        async function getUserDatas() {
+            const response = await getProfile();
+            const userDatas = response.data.body;
+            dispatch(saveProfile(userDatas));
+        }
+    }, [dispatch, token]);
+
+    function signOut(){
+        dispatch(deleteToken());
+    }
 
     return(
         <header className="header d-flex flex-row justify-content-between ms-4 me-4 p-2">
             <Link className="homeLink logo" to="/">
                 <img src={logo} alt="Logo ArgentBank"></img>
             </Link>
-                {isLogged ? (
+                {token ? (
             <nav className="navbar">
-                <Link className="userPageLink" to="/user">
+                <Link className="userPageLink" to="/profile">
                     <i className="fa fa-user-circle p-2"></i>
-                    <p>{userName}</p>
+                    <p>{userDatas.firstName}</p>
                 </Link>
-                <Link className="main-nav-item" to="/">
+                <Link className="main-nav-item" to="/" onClick={signOut}>
                     <i className="fa fa-sign-out p-2"></i>
                     Sign Out
                 </Link>
