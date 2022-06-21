@@ -1,7 +1,9 @@
 import logo from "../../assets/argentBankLogo.png"
 import { Link } from "react-router-dom";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteToken, saveProfile } from "../../store";
+import { getProfile } from "../../API/api";
 
 function Header() {
 
