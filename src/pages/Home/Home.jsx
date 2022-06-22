@@ -2,6 +2,9 @@ import moneyIcon from "../../assets/icon-money.png";
 import chatIcon from "../../assets/icon-chat.png";
 import securityIcon from "../../assets/icon-security.png";
 
+/**
+* This function create the home page.
+*/
 function Home() {
   return (
     <main>

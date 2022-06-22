@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteToken, saveProfile } from "../../store";
 import { getProfile } from "../../API/api";
 
+/**
+* This function create the header component and manage the infos shown based on the user's info recovered from the database.
+*/
 function Header() {
 
     const token = useSelector((state) => state.token);
@@ -17,8 +20,14 @@ function Header() {
             const userDatas = response.data.body;
             dispatch(saveProfile(userDatas));
         }
+        if (token){
+            getUserDatas();
+        }
     }, [dispatch, token]);
 
+    /**
+    * This function delete the token received when a user is connected in order to disconnect him.
+    */
     function signOut(){
         dispatch(deleteToken());
     }

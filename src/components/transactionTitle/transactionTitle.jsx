@@ -1,3 +1,6 @@
+/**
+  * This function manage the title infos on the transaction page.
+  */
 function TransactionTitle(props) {
     return (
       <section className="titleSection">

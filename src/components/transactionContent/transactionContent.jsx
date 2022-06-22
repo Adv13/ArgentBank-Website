@@ -1,20 +1,31 @@
 import { useRef } from "react";
 
+/**
+* This function manage the content part of the transaction's infos based on the user's info received from the database.
+*/
 function TransactionContent(props) {
   const arrow1 = useRef();
   const arrow2 = useRef();
   const moreInfo = useRef();
 
+  /**
+  * This function manage opening and closing for the transaction's details.
+  */
   function openClose() {
-    arrow1.current.classList.toggle("downArrow_no");
+    arrow1.current.classList.toggle("downArrow_no");// The toggle() method toggles between hide() and show() for the selected elements. This method checks the selected elements for visibility. show() is run if an element is hidden.
     arrow2.current.classList.toggle("upArrow_yes");
     moreInfo.current.classList.toggle("moreInfo_open");
   }
 
+  /**
+  * This function show an alert message when we want to modify the category of the transaction.
+  */
   function selectCategory() {
     alert("Choisir une catégorie");
   }
-
+  /**
+  * This function show an alert message when we want to modify the note of the transaction.
+  */
   function addNotes() {
     alert("Ajouter des notes");
   }

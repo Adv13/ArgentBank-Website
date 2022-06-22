@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { getLogin } from "../../API/api";
 import { saveToken } from "../../store";
 
+/**
+* This function create the sign in page, manage the authentication part based on the email/password received and the email/password existing in the database, and show the correct sign in/sign out information on the header.
+*/
 function SignIn() {
 
   const [email, setEmail] = useState("");
@@ -11,6 +14,9 @@ function SignIn() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  /**
+  * This function manage the authentication of the user by communicating with the database in order to verify the login infos (email/password). If correct, it navigates to the profile page.
+  */
   async function authentication(event) {
     event.preventDefault();
     try{

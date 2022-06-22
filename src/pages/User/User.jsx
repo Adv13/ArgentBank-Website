@@ -1,5 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 
+/**
+* This function create the profile page based on the user's info recovered from the database.
+*/
 function User() {
   const { userId } = useParams();
   return (

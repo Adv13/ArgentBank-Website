@@ -1,6 +1,9 @@
 import TransactionContent from "../../components/transactionContent/transactionContent";
 import TransactionTitle from "../../components/transactionTitle/transactionTitle";
 
+/**
+* This function create the transaction page based on the user's info recovered from the database.
+*/
 function Transactions() {
     return (
       <div>
