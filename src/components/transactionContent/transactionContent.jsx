@@ -13,7 +13,7 @@ function TransactionContent(props) {
   */
   function openClose() {
     arrow1.current.classList.toggle("downArrow_no");// The toggle() method toggles between hide() and show() for the selected elements. This method checks the selected elements for visibility. show() is run if an element is hidden.
-    arrow2.current.classList.toggle("upArrow_yes");
+    arrow2.current.classList.toggle("upArrow_yes");//toggle ( token ) - removes token from string and returns false. If token doesn't exist it's added and the function returns true
     moreInfo.current.classList.toggle("moreInfo_open");
   }
 
