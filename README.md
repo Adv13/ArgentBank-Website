@@ -1,4 +1,4 @@
-# Project made with HTML, CSS, SASS Javascript, React.js.
+# Project made with HTML, CSS, SASS Javascript, React.js. The Backend part includes Node.js, Express.js, and MongoDB.
 
 # Getting Started with Create React App
 
