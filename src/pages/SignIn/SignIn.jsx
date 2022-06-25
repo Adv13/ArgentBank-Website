@@ -5,7 +5,7 @@ import { getLogin } from "../../API/api";
 import { saveToken } from "../../store";
 
 /**
-* This function create the sign in page, manage the authentication part based on the email/password received and the email/password existing in the database, and show the correct sign in/sign out information on the header.
+* This function create the sign in page, manage the authentication part based on the email/password received and the email/password existing in the database.
 */
 function SignIn() {
 

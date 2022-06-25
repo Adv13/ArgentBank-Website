@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { saveProfile } from "../../store";
 import { updateProfile } from "../../API/api";
+
 /**
-* This function create the profile page based on the user's info recovered from the database.
+* This function create the profile page based on the user's info received from the database.
 */
 function User() {
 
