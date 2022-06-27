@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { saveProfile } from "../../store";
 import { updateProfile } from "../../API/api";
@@ -13,21 +13,21 @@ function User() {
   const userDatas = useSelector((state) => state.profile);
   const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
+  const firstName = useRef();
+  const lastName = useRef();
 
   async function save() {
     try{
-      const firstName = document.querySelector(".firstNameInput");
-      const lastName = document.querySelector(".lastNameInput");
-      if (firstName.value === "" && lastName.value !== ""){
-        alert("Veuillez renseigner votre prénom.");
-      }else if (firstName.value !== "" && lastName.value === ""){
-        alert("Veuillez renseigner votre nom.");
-      }else if(firstName.value === "" && lastName.value === ""){
-        alert("Veuillez renseigner votre prénom et votre nom.");
+      if(!firstName.current.value && lastName.current.value){
+          alert("Veuillez renseigner votre prénom.");
+      }else if (firstName.current.value && !lastName.current.value){
+          alert("Veuillez renseigner votre nom.");
+      }else if(!firstName.current.value && !lastName.current.value){
+          alert("Veuillez renseigner votre prénom et votre nom.");
       }else{
-        const response = await updateProfile(firstName.value, lastName.value);
-        dispatch(saveProfile(response.data.body));
-        setIsEdit(false);
+          const response = await updateProfile(firstName.current.value, lastName.current.value);
+          dispatch(saveProfile(response.data.body));
+          setIsEdit(false);
       }
     }catch(error){
       console.log("Following error when loading the user's page:" + error);
@@ -35,7 +35,7 @@ function User() {
     }
   }
 
-  return (
+  return userDatas.email ? (
     <main className="main bg-dark">
       {isEdit ? (
         <div className="header">
@@ -43,13 +43,15 @@ function User() {
           <div className="editor">
             <input
             type="text"
-            placeholder="{userDatas.firstName}"
+            placeholder={userDatas.firstName}
             className="firstNameInput"
+            ref={firstName}
             />
             <input
             type="text"
-            placeholder="{userDatas.lastName}"
+            placeholder={userDatas.lastName}
             className="lastNameInput"
+            ref={lastName}
             />
           </div>
           <div className="editor">
@@ -104,6 +106,11 @@ function User() {
         </div>
       </section>
     </main>
-  );
+  ):(
+    <div className="forbidden">
+      <h1>Access forbidden.</h1>
+      <h2>Please, connect to your account before.</h2>
+    </div>
+  )
 }
 export default User;

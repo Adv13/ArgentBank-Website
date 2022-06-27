@@ -68,7 +68,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/{userId}/transaction/{transactionId}:
+  /user/{userId}/transactions/{transactionId}:
     put:
       security:
         - Bearer: []
