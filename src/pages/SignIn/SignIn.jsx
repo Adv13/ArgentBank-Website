@@ -26,7 +26,8 @@ function SignIn() {
       navigate("/profile");
     }
     catch (error){
-      console.log(error);
+      console.log("Authentification error : " + error);
+      alert("Authentification error : " + error);
     }
   }
 

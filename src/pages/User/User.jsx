@@ -11,7 +11,7 @@ function User() {
 
   //const { userId } = useParams();
   const userDatas = useSelector((state) => state.profile);
-  const [edit, setEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
 
   async function save() {
@@ -27,16 +27,17 @@ function User() {
       }else{
         const response = await updateProfile(firstName.value, lastName.value);
         dispatch(saveProfile(response.data.body));
-        setEdit(false);
+        setIsEdit(false);
       }
     }catch(error){
-      console.log(error);
+      console.log("Following error when loading the user's page:" + error);
+      alert("Following error when loading the user's page:" + error);
     }
   }
 
   return (
     <main className="main bg-dark">
-      {edit ? (
+      {isEdit ? (
         <div className="header">
           <h1>Welcome back</h1>
           <div className="editor">
@@ -53,7 +54,7 @@ function User() {
           </div>
           <div className="editor">
             <button className="editor-button" onClick={save}>Save</button>
-            <button className="editor-button" onClick={()=>setEdit(false)}>Cancel</button>
+            <button className="editor-button" onClick={()=>setIsEdit(false)}>Cancel</button>
           </div>
         </div>
       ):(
@@ -62,7 +63,7 @@ function User() {
           <br/>
           {userDatas.firstName + " " + userDatas.lastName} !
           </h1>
-          <button className="edit-button" onClick={()=>setEdit(true)}>Edit Name</button>
+          <button className="edit-button" onClick={()=>setIsEdit(true)}>Edit Name</button>
         </div>
       )}
       <h2 className="sr-only">Accounts</h2>

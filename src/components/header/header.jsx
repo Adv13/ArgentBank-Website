@@ -2,7 +2,7 @@ import logo from "../../assets/argentBankLogo.png"
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteToken, saveProfile } from "../../store";
+import { deleteToken, resetProfile, saveProfile } from "../../store";
 import { getProfile } from "../../API/api";
 
 /**
@@ -13,6 +13,7 @@ function Header() {
     const token = useSelector((state) => state.token);
     const userDatas = useSelector((state) => state.profile);
     const dispatch = useDispatch();
+    const [isLogged, setIsLogged] = useState(false);
 
     useEffect(() => {
         async function getUserDatas() {
@@ -22,6 +23,7 @@ function Header() {
         }
         if (token){
             getUserDatas();
+            setIsLogged(true);
         }
     }, [dispatch, token]);
 
@@ -30,6 +32,8 @@ function Header() {
     */
     function signOut(){
         dispatch(deleteToken());
+        dispatch(resetProfile());
+        setIsLogged(false);
     }
 
     return(
@@ -37,7 +41,7 @@ function Header() {
             <Link className="homeLink logo" to="/">
                 <img src={logo} alt="Logo ArgentBank"></img>
             </Link>
-                {token ? (
+                {isLogged ? (
             <nav className="navbar">
                 <Link className="userPageLink" to="/profile">
                     <i className="fa fa-user-circle p-2"></i>

@@ -1,20 +1,20 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 /**
 * This function manage the content part of the transaction's infos based on the user's info received from the database.
 */
 function TransactionContent(props) {
-  const arrow1 = useRef();
-  const arrow2 = useRef();
-  const moreInfo = useRef();
+  const [isUp, setIsUp] = useState(false);
 
   /**
   * This function manage opening and closing for the transaction's details.
   */
   function openClose() {
-    arrow1.current.classList.toggle("downArrow_no");// The toggle() method toggles between hide() and show() for the selected elements. This method checks the selected elements for visibility. show() is run if an element is hidden.
-    arrow2.current.classList.toggle("upArrow_yes");//toggle ( token ) - removes token from string and returns false. If token doesn't exist it's added and the function returns true
-    moreInfo.current.classList.toggle("moreInfo_open");
+    if(!isUp){
+      setIsUp(true);
+    }else{
+      setIsUp(false);
+    }
   }
 
   /**
@@ -34,19 +34,19 @@ function TransactionContent(props) {
     <div>
       <div className="dataLine">
         <div id="arrow" onClick={openClose}>
-          <span className="downArrow" ref={arrow1}>
-            <i className="fa fa-angle-down" aria-hidden="true"></i>
-          </span>
-          <span className="upArrow" ref={arrow2}>
+          {isUp ?(
             <i className="fa fa-angle-up" aria-hidden="true"></i>
-          </span>
+          ):(
+            <i className="fa fa-angle-down" aria-hidden="true"></i>
+          )}
         </div>
         <div id="date">{props.date}</div>
         <div id="descr">{props.descr}</div>
         <div id="amount">{props.amount}</div>
         <div id="balance">{props.balance}</div>
       </div>
-      <div className="moreInfo" ref={moreInfo}>
+      {isUp &&(
+      <div className="moreInfo">
         <p>Transaction Type: {props.transType}</p>
         <p>
           Category: {props.category}{" "}
@@ -61,6 +61,7 @@ function TransactionContent(props) {
           <i className="fa fa-pencil" aria-hidden="true" onClick={addNotes}></i>
         </p>
       </div>
+      )}
     </div>
   );
 }
