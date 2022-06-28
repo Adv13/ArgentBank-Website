@@ -36,31 +36,38 @@ function Header() {
     }
 
     return(
-        <header className="header d-flex flex-row justify-content-between ms-4 me-4 p-2">
-            <Link className="homeLink logo" to="/">
-                <img src={logo} alt="Logo ArgentBank"></img>
-            </Link>
-                {isLogged ? (
-            <nav className="navbar">
-                <Link className="userPageLink" to="/profile">
-                    <i className="fa fa-user-circle p-2"></i>
-                    <p>{userDatas.firstName}</p>
-                </Link>
-                <Link className="main-nav-item" to="/" onClick={signOut}>
-                    <i className="fa fa-sign-out p-2"></i>
-                    Sign Out
-                </Link>
-            </nav>
-            ) : (
-            <nav className="navbar">
-            <Link className="main-nav-item" to="/login">
-                <i className="fa fa-user-circle p-2"></i>
+        <header>
+        <nav className="main-nav">
+          <Link className="main-nav-logo" to="/">
+            <img
+              className="main-nav-logo-image"
+              alt="Argent Bank Logo"
+              src={logo}
+            />
+            <h1 className="sr-only">Argent Bank</h1>
+          </Link>
+          {isLogged ? (
+            <div className="nav-right">
+              <Link className="main-nav-item" to="/profile">
+                <i className="fa fa-user-circle"></i>
+                {userDatas.firstName}
+              </Link>
+              <Link className="main-nav-item" to="/" onClick={signOut}>
+                <i className="fa fa-sign-out"></i>
+                Sign Out
+              </Link>
+            </div>
+          ) : (
+            <div className="nav-right">
+              <Link className="main-nav-item" to="/login">
+                <i className="fa fa-user-circle"></i>
                 Sign In
-            </Link>
-            </nav>
-        )}
-
-        </header>)
+              </Link>
+            </div>
+          )}
+        </nav>
+      </header>
+    );
 }
 
 export default Header;
