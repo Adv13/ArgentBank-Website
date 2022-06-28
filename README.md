@@ -1,4 +1,5 @@
-# Project made with HTML, CSS, SASS Javascript, React.js. The Backend part includes Node.js, Express.js, and MongoDB
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
