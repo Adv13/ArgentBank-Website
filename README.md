@@ -72,12 +72,20 @@ Once you run the `populate-db` script on the Backend part, you should have two u
 3. Open a terminal window in the cloned project
 4. Run the following commands:
 
-### `npm install`
+```bash
 
-In order to install all packages required for this project.
-If needed, install sass (globally : npm i -g sass OR locally : npm i sass --save-dev)
+#If needed in order to install SASS globally
+npm i -g sass
 
-### `npm start`
+# OR Locally
+npm i sass --save-dev
 
-In order to launch this project at http://localhost:3000/.
+# Install dependencies
+npm install
+
+#Start the project at http://localhost:3000/
+npm start
+
+```
+
 If you don't see the project on this port, It might be already occuped. Try another one !
