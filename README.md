@@ -83,7 +83,7 @@ npm i sass --save-dev
 # Install dependencies
 npm install
 
-#Start the project at http://localhost:3000/
+# Start the project at http://localhost:3000/
 npm start
 
 ```
