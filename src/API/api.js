@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ThemeConsumer } from "styled-components";
 const baseUrl = "http://localhost:3001/api/v1/";
 
 /**
@@ -8,10 +9,12 @@ const baseUrl = "http://localhost:3001/api/v1/";
  * @returns
  */
 export const getLogin = (email, password) => {
-  return axios.post(baseUrl+"user/login", {
+  return axios
+  .post(baseUrl+"user/login", {
     email,
     password,
-  });
+  })
+  .then((response) => response.data.body.token)
 };
 
 /**
@@ -19,13 +22,15 @@ export const getLogin = (email, password) => {
  * @returns
  */
 export const getProfile = () => {
-  return axios.post(
+  return axios
+  .post(
     baseUrl+"user/profile",
     {},
     {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     }
-  );
+  )
+  .then((response) => response.data.body)
 };
 
 /**
@@ -35,7 +40,8 @@ export const getProfile = () => {
  * @returns
  */
 export const updateProfile = (firstName, lastName) => {
-  return axios.put(
+  return axios
+  .put(
     baseUrl+"user/profile",
     {
       firstName,
@@ -44,5 +50,6 @@ export const updateProfile = (firstName, lastName) => {
     {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     }
-  );
+  )
+  .then((response) => response.data.body)
 };
