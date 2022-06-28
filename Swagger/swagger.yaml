@@ -121,16 +121,16 @@ paths:
       summary: Get Transaction API
       description: API for fetching transactions of the month
       parameters:
-        -in: header
+        - in: header
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-        -in: path
+        - in: path
           name: userId
           type: string
           description: Attach user ID to URL
           required: true
-        -in: query
+        - in: query
           name: month
           type: string
           description: Name of the month when the transaction has been created
@@ -146,7 +146,6 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-
     post:
       security:
         - Bearer: []
@@ -155,17 +154,17 @@ paths:
       summary: Create Transaction API
       description: API for creating specific transaction details
       parameters:
-        -in: header
+        - in: header
           name: Authorization
           type: string
           description: Attach Bearer JWT token
           required: true
-        -in: path
+        - in: path
           name: userId
           type: string
           description: Attach user ID to URL
           required: true
-        -in:
+        - in:
           name: body
           description: Create transaction
           required: true
@@ -181,62 +180,62 @@ paths:
         '400':
           description: Invalid Fields
         '500':
-          description: Internal Server Error
+          description: Internal Server Error      
   /user/{userId}/transactions/{transactionId}:
     put:
       security:
         - Bearer: []
       tags:
-        -Transaction Module
+        - Transaction Module
       summary: Update Transaction API
       description: API for updating a specific transaction detail
       parameters:
-        -in: header
+        - in: header
           type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-        -in: path
+        - in: path
           name: userId
           type: string
           description: Attach user ID to URL
           required: true
-        -in: path
+        - in: path
           name: transactionId
           type: string
           description: Attach transaction ID to URL
           required: true
-        -in: body
+        - in: body
           name: body
           description: Update user profile attributes
           required: true
           schema:
             $ref: '#/definitions/Transactions'
       produces:
-          - application/json
-        responses:
-          '200':
-            description: Transactions details updated successully
-            schema:
-              $ref: '#/definitions/TransactionAllResponse'
-          '400':
-            description: Invalid Fields
-          '500':
-            description: Internal Server Error
-  delete:
-    security:
-        - Bearer: []
+        - application/json
+      responses:
+        '200':
+          description: Transactions details updated successully
+          schema:
+            $ref: '#/definitions/TransactionAllResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+    delete:
+      security:
+          - Bearer: []
       tags:
-        - User Module
+        - Transaction Module
       summary: Delete Transaction API
       description: API for deleting a specific transaction detail
       parameters:
-        -in: header
+        - in: header
           type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-        -in: path
+        - in: path
           name: userId
           type: string
           description: Attach user ID to URL
@@ -253,9 +252,9 @@ paths:
           description: Transactions details deleted successully
           schema:
             $ref: '#/definitions/TransactionAllResponse'
-        '400':
+          '400':
           description: Invalid Fields
-        '500':
+          '500':
           description: Internal Server Error
 securityDefinitions:
   Bearer:
