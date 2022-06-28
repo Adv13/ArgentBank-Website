@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getLogin } from "../../API/api";
 import { saveToken } from "../../store";
 
@@ -21,8 +21,7 @@ function SignIn() {
     event.preventDefault();
     try{
       const response = await getLogin(email, password);
-      const token = response.data.body.token;
-      dispatch(saveToken(token));
+      dispatch(saveToken(response));
       navigate("/profile");
     }
     catch (error){

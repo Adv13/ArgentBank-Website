@@ -26,7 +26,7 @@ function User() {
           alert("Veuillez renseigner votre prénom et votre nom.");
       }else{
           const response = await updateProfile(firstName.current.value, lastName.current.value);
-          dispatch(saveProfile(response.data.body));
+          dispatch(saveProfile(response));
           setIsEdit(false);
       }
     }catch(error){
