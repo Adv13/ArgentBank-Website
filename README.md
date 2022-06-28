@@ -11,9 +11,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Instructions in order to launch the project
+# Instructions in order to launch the project
 
-### Backend part
+## Backend part
 
 1. Fork the repo https://github.com/Adv13/Project-13-Bank-API
 2. Clone the repo onto your computer
@@ -65,7 +65,7 @@ Once you run the `populate-db` script on the Backend part, you should have two u
 - Email: `steve@rogers.com`,
 - Password: `password456`
 
-### Frontend part
+## Frontend part
 
 1. Fork the repo https://github.com/Adv13/DENIE_Tiffany_13_19052022
 2. Clone the repo onto your computer
