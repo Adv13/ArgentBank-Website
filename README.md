@@ -4,9 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Instructions in order to launch the project
 
-In this project directory, you can run:
-
 ### Backend part
+
+1. Fork the repo https://github.com/Adv13/Project-13-Bank-API
+2. Clone the repo onto your computer
+3. Open a terminal window in the cloned project
+4. Run the following commands:
 
 Argent Bank uses the following tech stack:
 
@@ -21,14 +24,7 @@ node --version
 
 # Check Mongo version
 mongo --version
-```
 
-1. Fork the repo https://github.com/Adv13/Project-13-Bank-API
-2. Clone the repo onto your computer
-3. Open a terminal window in the cloned project
-4. Run the following commands:
-
-```bash
 # Install dependencies
 npm install
 
@@ -41,15 +37,6 @@ npm run populate-db
 
 Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
 Your API documentation will be at http://localhost:3001/api-docs and the part 2 of the API documentation will be at http://localhost:3001/api-docs2
-
-### Frontend part
-
-1. Fork the repo https://github.com/Adv13/DENIE_Tiffany_13_19052022
-2. Clone the repo onto your computer
-3. Open a terminal window in the cloned project
-4. Run the following commands:
-
-### `npm install`
 
 ## Populated Database Data
 
@@ -68,3 +55,19 @@ Once you run the `populate-db` script on the Backend part, you should have two u
 - Last Name: `Rogers`,
 - Email: `steve@rogers.com`,
 - Password: `password456`
+
+### Frontend part
+
+1. Fork the repo https://github.com/Adv13/DENIE_Tiffany_13_19052022
+2. Clone the repo onto your computer
+3. Open a terminal window in the cloned project
+4. Run the following commands:
+
+### `npm install`
+
+In order to install all packages required for this project.
+
+### `npm start`
+
+In order to launch this project at http://localhost:3000/.
+If you don't see the project on this port, It might be already occuped. Try another one !
