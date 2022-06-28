@@ -66,6 +66,7 @@ Once you run the `populate-db` script on the Backend part, you should have two u
 ### `npm install`
 
 In order to install all packages required for this project.
+If needed, install sass (globally : npm i -g sass OR locally : npm i sass --save-dev)
 
 ### `npm start`
 
