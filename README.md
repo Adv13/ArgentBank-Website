@@ -92,4 +92,4 @@ If you don't see the project on this port, It might be already occuped. Try anot
 
 ## Phase 2 : Swagger file for Transactions API infos
 
-Remember that the new Swagger file asked is at http://localhost:3001/api-docs2 (on the Backend part)
+Please, remember that the new Swagger file asked is at http://localhost:3001/api-docs2 (on the Backend part)
