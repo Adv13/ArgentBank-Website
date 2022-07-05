@@ -15,11 +15,11 @@ return(
   <Router>
     <Header />
     <Routes>
-    <Route path="/" element={<Home />} />
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/profile" element={<User />} />
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/*" element={<Error />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<SignIn />} />
+      <Route path="/profile" element={<User />} />
+      <Route path="/transactions" element={<Transactions />} />
+      <Route path="/*" element={<Error />} />
     </Routes>
     <Footer />
   </Router>)
