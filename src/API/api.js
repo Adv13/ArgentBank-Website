@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ThemeConsumer } from "styled-components";
 const baseUrl = "http://localhost:3001/api/v1/";
 
 /**
